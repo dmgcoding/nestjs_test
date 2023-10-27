@@ -8,6 +8,7 @@
   "scripts": {
     "prisma:dev:deploy": "prisma migrate deploy",
     "dev:db:up": "docker compose up dev-db -d",
+    "dev:db:rm": "docker compose rm dev-db -s -f -v",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
