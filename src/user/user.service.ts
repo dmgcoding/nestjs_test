@@ -11,5 +11,16 @@ export class UserService {
     return user;
   }
 
-  async editUser(userId: number, body: EditUserDto) {}
+  async editUser(userId: number, body: EditUserDto) {
+    const user = await this.prisma.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        ...body,
+      },
+    });
+    delete user.hash;
+    return user;
+  }
 }
